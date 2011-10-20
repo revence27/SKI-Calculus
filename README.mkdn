@@ -1,0 +1,7 @@
+SKI Calculus
+============
+A collection of implementations of SKI calculus in languages that are not strongly-normalising. ;o)
+
+Implemented
+-----------
+1.  Lisp (I used SBCL).

@@ -1,0 +1,8 @@
+(defun ski (se)
+ (case (car se)
+   ('i (if (null (cdr se)) se (ski `(,(cadr se)))))
+   ('k (if (< (length se) 3) se (ski `(,(cadr se)))))
+   ('s (if (< (length se) 4) se (ski `(,@(ski `(,(cadr se) ,(cadddr se)))
+                    ,(ski `(,(caddr se) ,(cadddr se)))))))
+   (otherwise (if (listp (car se))
+      (ski `(,(ski (car se)) ,@(cdr se))) se))))
